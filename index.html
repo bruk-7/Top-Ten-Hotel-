@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Ten Hotel | Salite Meheret | Luxury Stay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-grey: #121212; /* Rich dark greyshi */
+            --cozy-wood: #8c5a2b; /* Deep wood tone */
+            --luxury-gold: #c5a059;
+            --white: #ffffff;
+            --soft-white: #f8f8f8;
+            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; background: var(--white); color: var(--dark-grey); line-height: 1.7; }
+
+        /* Navigation */
+        nav { background: rgba(18, 18, 18, 0.98); padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; z-index: 1000; border-bottom: 1px solid #333; }
+        .logo { color: var(--white); font-family: 'Playfair Display', serif; font-size: 1.6rem; text-decoration: none; letter-spacing: 2px; }
+        .logo span { color: var(--cozy-wood); }
+        .nav-links a { color: var(--white); text-decoration: none; margin-left: 25px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; transition: var(--transition); }
+        .nav-links a:hover { color: var(--cozy-wood); }
+
+        /* Hero Section */
+        header { 
+            height: 100vh; 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('hero-bg.jpg') center/cover no-repeat;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: var(--white);
+        }
+        header h1 { font-family: 'Playfair Display', serif; font-size: 4.5rem; margin-bottom: 10px; animation: fadeInDown 1s ease; }
+        header p { font-size: 1.2rem; letter-spacing: 4px; text-transform: uppercase; color: var(--luxury-gold); }
+
+        /* Booking Engine Section */
+        .booking-container { display: flex; justify-content: center; margin-top: -60px; padding: 0 20px; }
+        .booking-bar { 
+            background: var(--dark-grey); padding: 40px; border-radius: 4px; border-top: 5px solid var(--cozy-wood);
+            display: flex; gap: 25px; flex-wrap: wrap; box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+        }
+        .input-group { display: flex; flex-direction: column; color: var(--white); }
+        .input-group label { font-size: 0.75rem; text-transform: uppercase; margin-bottom: 8px; color: #888; }
+        .input-group input { padding: 12px; background: #222; border: 1px solid #333; color: white; border-radius: 2px; }
+        .book-btn { background: var(--cozy-wood); color: white; border: none; padding: 0 40px; cursor: pointer; transition: var(--transition); font-weight: 600; text-transform: uppercase; height: 50px; align-self: flex-end; }
+        .book-btn:hover { background: var(--luxury-gold); transform: translateY(-2px); }
+
+        /* Content Sections */
+        section { padding: 120px 10%; opacity: 0; transform: translateY(50px); transition: 1.2s all ease-out; }
+        section.visible { opacity: 1; transform: translateY(0); }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 3rem; text-align: center; margin-bottom: 60px; position: relative; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--cozy-wood); margin: 20px auto; }
+
+        /* Rooms Section */
+        .rooms-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+        .room-card { background: var(--soft-white); overflow: hidden; position: relative; box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
+        .room-img { height: 400px; transition: var(--transition); }
+        .room-card:hover .room-img { transform: scale(1.1); }
+        .room-info { padding: 30px; background: white; border-top: 4px solid var(--cozy-wood); }
+        .room-info h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 15px; }
+
+        /* Amenities Section - Dark Greyshi Style */
+        .amenities { background: var(--dark-grey); color: var(--white); }
+        .amenities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; }
+        .amenity-item { padding: 40px; border: 1px solid #333; transition: var(--transition); }
+        .amenity-item:hover { background: #1a1a1a; border-color: var(--cozy-wood); }
+
+        /* Footer */
+        footer { background: #0a0a0a; color: #666; padding: 80px 10% 40px; text-align: center; border-top: 1px solid #222; }
+        .footer-logo { color: var(--white); font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 20px; display: block; text-decoration: none; }
+        
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            .booking-bar { flex-direction: column; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">TOP TEN <span>HOTEL</span></a>
+        <div class="nav-links">
+            <a href="#rooms">Rooms</a>
+            <a href="#amenities">Amenities</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Location</a>
+        </div>
+    </nav>
+
+    <header>
+        <p>Welcome to Salite Meheret</p>
+        <h1>Unmatched Elegance</h1>
+    </header>
+
+    <div class="booking-container">
+        <div class="booking-bar">
+            <div class="input-group">
+                <label>Arrival Date</label>
+                <input type="date">
+            </div>
+            <div class="input-group">
+                <label>Departure Date</label>
+                <input type="date">
+            </div>
+            <div class="input-group">
+                <label>Adults</label>
+                <input type="number" value="1" min="1">
+            </div>
+            <button class="book-btn">Book Now</button>
+        </div>
+    </div>
+
+    <section id="rooms">
+        <h2 class="section-title">Rooms & Suites</h2>
+        <div class="rooms-grid">
+            <div class="room-card">
+                <div class="room-img" style="background: url('luxury-room.jpg') center/cover;"></div>
+                <div class="room-info">
+                    <h3>Master Suite</h3>
+                    <p>Hand-crafted wood furnishings and premium comfort for a restful night.</p>
+                </div>
+            </div>
+            <div class="room-card">
+                <div class="room-img" style="background: url('lobby-view.jpg') center/cover;"></div>
+                <div class="room-info">
+                    <h3>Executive Lounge</h3>
+                    <p>Sophisticated spaces designed for both relaxation and business meetings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="amenities" class="amenities">
+        <h2 class="section-title" style="color: white;">Hotel Facilities</h2>
+        <div class="amenities-grid">
+            <div class="amenity-item">
+                <h4 style="color: var(--cozy-wood);">Dining Bar</h4>
+                <p style="font-size: 0.8rem; margin-top: 10px;">Renowned Spirits & Cozy Atmosphere</p>
+            </div>
+            <div class="amenity-item">
+                <h4 style="color: var(--cozy-wood);">Free Wi-Fi</h4>
+                <p style="font-size: 0.8rem; margin-top: 10px;">High-speed Connectivity Everywhere</p>
+            </div>
+            <div class="amenity-item">
+                <h4 style="color: var(--cozy-wood);">Event Hall</h4>
+                <p style="font-size: 0.8rem; margin-top: 10px;">Perfect for Weddings & Meetings</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <a href="#" class="footer-logo">TOP TEN HOTEL</a>
+        <p>Salite Meheret, Addis Ababa, Ethiopia</p>
+        <p style="margin-top: 20px; font-size: 0.8rem;">&copy; 2026 Top Ten Hotel. Designed for Excellence.</p>
+    </footer>
+
+    <script>
+        // Scroll Reveal Transition
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
