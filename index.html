@@ -21,10 +21,10 @@
 
         /* Navigation */
         nav { background: rgba(18, 18, 18, 0.98); padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; z-index: 1000; border-bottom: 1px solid #333; }
-        .logo { color: var(--white); font-family: 'Playfair Display', serif; text-decoration: none; font-size: 1.5rem; letter-spacing: 2px; }
+        .logo { color: var(--white); font-family: 'Playfair Display', serif; text-decoration: none; font-size: 1.5rem; }
         .logo span { color: var(--cozy-wood); }
 
-        /* Hero Section */
+        /* Hero */
         header { 
             height: 80vh; 
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('hero-bg.jpg') center/cover no-repeat;
@@ -32,59 +32,58 @@
         }
         header h1 { font-family: 'Playfair Display', serif; font-size: 4rem; }
 
-        /* --- NEW: WhatsApp Floating Button --- */
-        .whatsapp-popup {
+        /* --- WHATSAPP POPUP (Bottom Right) --- */
+        .whatsapp-btn {
             position: fixed;
             bottom: 30px;
             right: 30px;
             background-color: var(--whatsapp-green);
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            font-size: 35px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
             z-index: 9999;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: 0.3s;
         }
-        .whatsapp-popup:hover { transform: scale(1.1); background-color: #1ebe57; }
-        
-        /* --- NEW: Google Reviews Section --- */
-        .review-section {
+        .whatsapp-btn:hover { transform: scale(1.1); }
+
+        /* Sections */
+        section { padding: 80px 10%; }
+
+        /* --- GOOGLE REVIEW SECTION (Bottom) --- */
+        .google-review-box {
             background: var(--dark-grey);
             color: white;
-            padding: 80px 10%;
+            padding: 60px 20px;
             text-align: center;
+            border-top: 4px solid var(--cozy-wood);
         }
-        .rating-box {
-            background: #1a1a1a;
-            padding: 40px;
-            border: 1px solid var(--cozy-wood);
+        .stars { color: var(--luxury-gold); font-size: 1.8rem; margin-bottom: 10px; }
+        .rating-text { font-size: 1.2rem; margin-bottom: 20px; }
+        .map-link {
             display: inline-block;
-            border-radius: 8px;
-        }
-        .stars { color: var(--luxury-gold); font-size: 1.5rem; margin-bottom: 10px; }
-        .google-link {
-            display: inline-block;
-            margin-top: 20px;
-            color: var(--white);
+            background: var(--cozy-wood);
+            color: white;
+            padding: 12px 30px;
             text-decoration: none;
-            border-bottom: 1px solid var(--cozy-wood);
-            padding-bottom: 5px;
             font-weight: 600;
+            border-radius: 4px;
+            transition: 0.3s;
         }
-        .google-link:hover { color: var(--cozy-wood); }
+        .map-link:hover { background: var(--luxury-gold); }
 
-        footer { background: #000; color: #666; padding: 40px; text-align: center; font-size: 0.8rem; }
+        footer { background: #000; color: #555; padding: 30px; text-align: center; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
-    <a href="https://wa.me/251900000000" class="whatsapp-popup" target="_blank" title="Chat with us on WhatsApp">
+    <a href="https://wa.me/251900000000" class="whatsapp-btn" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -93,38 +92,33 @@
     </nav>
 
     <header>
-        <h1>Salite Meheret</h1>
-        <p>A Sanctuary of Luxury & Comfort</p>
+        <h1>Top Ten Hotel</h1>
+        <p>Salite Meheret, Addis Ababa</p>
     </header>
 
-    <section id="rooms" style="padding: 100px 10%; text-align: center;">
-        <h2 style="font-family: 'Playfair Display'; margin-bottom: 50px; font-size: 2.5rem;">The Experience</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-            <div style="height: 400px; background: url('luxury-room.jpg') center/cover; border-bottom: 5px solid var(--cozy-wood);"></div>
-            <div style="height: 400px; background: url('lobby-view.jpg') center/cover; border-bottom: 5px solid var(--cozy-wood);"></div>
+    <section id="gallery">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            <div style="height: 350px; background: url('luxury-room.jpg') center/cover;"></div>
+            <div style="height: 350px; background: url('lobby-view.jpg') center/cover;"></div>
         </div>
     </section>
 
-    <section class="review-section">
-        <h2 style="font-family: 'Playfair Display'; margin-bottom: 30px;">Guest Reviews</h2>
-        <div class="rating-box">
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-                <i class="far fa-star"></i>
-            </div>
-            <h3 style="font-size: 2.5rem;">3.5 / 5</h3>
-            <p>Based on 452 Google Reviews</p>
-            <a href="https://www.google.com/maps/place/Top+Ten+hotel+%7C+Salite+Meheret+%7C+%E1%AD%90%E1%8D%95+%E1%89%B4%E1%8A%95+%E1%89% his%E1%89%B4%E1%8A%95+%7C+%E1%8A%B3%E1%88%8A%E1%89%B0+%E1%88%9D%E1%88%95%E1%88%A8%E1%89%B5" target="_blank" class="google-link">
-                <i class="fab fa-google"></i> View on Google Maps
-            </a>
+    <div class="google-review-box">
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <i class="far fa-star"></i>
         </div>
-    </section>
+        <p class="rating-text">3.5/5 Rating based on 452 Guest Reviews</p>
+        <a href="https://www.google.com/maps/place/Top+Ten+hotel+%7C+Salite+Meheret" target="_blank" class="map-link">
+            <i class="fab fa-google"></i> READ REVIEWS ON GOOGLE MAPS
+        </a>
+    </div>
 
     <footer>
-        <p>&copy; 2026 TOP TEN HOTEL | SALITE MEHERET | ADDIS ABABA</p>
+        <p>© 2026 Top Ten Hotel | Salite Meheret Branch</p>
     </footer>
 
 </body>
